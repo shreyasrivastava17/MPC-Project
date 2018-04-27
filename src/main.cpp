@@ -92,6 +92,12 @@ int main() {
           double psi = j[1]["psi"];
           double v = j[1]["speed"];
 
+          double latency =0.125;
+          px = px + v * cos(psi) * latency;
+          py = py + v * sin(psi) * latency;
+          psi = psi - v* steer_value/Lf * latency;
+          v += v + throttle_value * latency;
+          
           //converting to cars coordinate system
           for(int i = 0; i<ptsx.size(); i++){
             double shift_x = ptsx[i]-px;
