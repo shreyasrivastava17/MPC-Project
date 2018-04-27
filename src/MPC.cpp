@@ -22,7 +22,7 @@ double dt = 0.1;
 const double Lf = 2.67;
 
 //state initialization
-double ref_v = 60;
+double ref_v = 99;
 double ref_cte = 0;
 double ref_eppsi = 0;
 
@@ -47,8 +47,8 @@ class FG_eval {
     //cost function
     // The part of the cost based on the reference state.
     for (int t = 0; t < N; t++) {
-      fg[0] += 3600*CppAD::pow(vars[cte_start + t], 2);
-      fg[0] += 3600*CppAD::pow(vars[epsi_start + t], 2);
+      fg[0] += 3000*CppAD::pow(vars[cte_start + t], 2);
+      fg[0] += 3000*CppAD::pow(vars[epsi_start + t], 2);
       fg[0] += CppAD::pow(vars[v_start + t] - ref_v, 2);
     }
 
