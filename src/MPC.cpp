@@ -22,7 +22,7 @@ double dt = 0.1;
 const double Lf = 2.67;
 
 //state initialization
-double ref_v = 40;
+double ref_v = 60;
 double ref_cte = 0;
 double ref_eppsi = 0;
 
@@ -47,8 +47,8 @@ class FG_eval {
     //cost function
     // The part of the cost based on the reference state.
     for (int t = 0; t < N; t++) {
-      fg[0] += 2900*CppAD::pow(vars[cte_start + t], 2);
-      fg[0] += 2800*CppAD::pow(vars[epsi_start + t], 2);
+      fg[0] += 3600*CppAD::pow(vars[cte_start + t], 2);
+      fg[0] += 3600*CppAD::pow(vars[epsi_start + t], 2);
       fg[0] += CppAD::pow(vars[v_start + t] - ref_v, 2);
     }
 
@@ -238,9 +238,9 @@ vector<double> MPC::Solve(Eigen::VectorXd state, Eigen::VectorXd coeffs) {
   vector<double> result;
   result.push_back(solution.x[delta_start]);
   result.push_back(solution.x[a_start]);
-  for(int i - 0 ; i< N-1; i++){
+  for(int i = 0 ; i< N-1; i++){
     result.push_back(solution.x[x_start + i + 1]);
-    result.push_back(solution.x[y_start + i + 1])
+    result.push_back(solution.x[y_start + i + 1]);
   }
   
   return result;
