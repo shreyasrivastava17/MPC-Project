@@ -4,7 +4,7 @@
 
 **MPC Controller Project**
 
-(Note - Hi , The visualization for the simulator on my machine is available at - https://youtu.be/0fdTAO2y_w4)
+(Note - Hi , The visualization for the simulator on my machine is available at - https://github.com/shreyasrivastava17/MPC-Project/blob/master/REC-2.ogv)
 
 The broad goals / steps of this project are the following:
 
